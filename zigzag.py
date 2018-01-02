@@ -54,9 +54,9 @@ def find_agents(city, town):
 
 def main():
 	# variable inputs, can enter any city and town as long as the string matches the option values in the html
-	# reproduced for your convenience here: https://cl.ly/obq6
+	# reproduced for your convenience here: https://cl.ly/obrS
 
-	agencies = find_agents("yangon", "north-okkalapa")
+	agencies = find_agents("danubyu", "danuphyuayeyarwady")
 	
 	for agency in agencies:
 		print(agency, "\n")
