@@ -33,7 +33,12 @@ def find_agents(city, town):
 	# adjust string into a json-parseable format
 
 	markers = script.string[beg : end - 4] + "]"
-	data = json.loads(markers.replace(":\"", "\":\"").replace("\", ", "\", \"").replace("{ ", "{ \"").replace("),", ")\"").replace(": ", "\": \""))
+	replacements = {":\"": "\":\"", "\", ": "\", \"", "{ ": "{ \"", "),": ")\"", ": ": "\": \""}
+
+	for i, j in replacements.items():
+		markers = markers.replace(i, j)
+
+	data = json.loads(markers)
 
 	# we now have a json object containing store name, phone, address, gps locations
 	# gps loc a bit messy (written as a js object init, can be fixed with simple string splicing)
