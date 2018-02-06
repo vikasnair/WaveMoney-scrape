@@ -6,7 +6,7 @@ import json
 # input: string city and town in myanmar (indexed by wave money)
 # output: json-formatted list of dictionaries describing money agents in the area (name, address, phone, gps coordinates, web address)
 
-# note to laurent: this function effectively scrapes the entire country indexed on wave money.
+# this function effectively scrapes the entire country indexed on wave money.
 # three external modules are used to fetch web data, scrape data, and parse into json respectively
 # if we were to use other providers for data, we could expand our method by writing functions to scrape data (or access apis) from these other sources
 # we would need to ensure that all data is homogenous, so when formatting into json we should keep only the intersecting data fields (likely name, phone, address, + gps loc)
