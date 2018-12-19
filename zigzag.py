@@ -1,3 +1,4 @@
+from sys import argv
 import requests
 import json
 from bs4 import BeautifulSoup
@@ -55,7 +56,12 @@ def main():
     # as long as the string matches the option values in the html
     # reproduced for your convenience here: https://cl.ly/obrS
 
-    agencies = find_agents("danubyu", "danuphyuayeyarwady")
+    city, town = 'danubyu', 'danuphyuayeyarwady'
+
+    if len(argv) == 3:
+        city, town = argv[1:]
+
+    agencies = find_agents(city, town)
 
     for agency in agencies:
         print(agency, "\n")
